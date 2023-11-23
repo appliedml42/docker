@@ -4,9 +4,11 @@ isort==5.12.0
 jsonargparse[signatures]
 jupyterlab==4.0.7
 jupyterlab-code-formatter==2.2.1
+ipywidgets==8.1.1
 names
 pyyaml
 sentencepiece
 transformers
+vllm==0.2.2
 wandb
 zstd
