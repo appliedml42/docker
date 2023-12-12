@@ -1,1 +1,1 @@
-docker run --gpus all -it -d --net=host --pid=host --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 -v /home/bizon/Documents/workspace:/workspace -v /home/bizon/Documents/usb_backup:/usb_backup -v ~/.aws:/app/.aws -u $UID:$UID $1 bash
+docker run --gpus all -it -d --net=host --pid=host --shm-size=16g --ulimit memlock=-1 --ulimit stack=67108864 -v /home/bizon/Documents/workspace:/workspace -v /home/bizon/Documents/usb_backup:/usb_backup -v ~/.aws:/app/.aws -u $UID:$UID $1 bash
