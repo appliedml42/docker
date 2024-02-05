@@ -1,7 +1,7 @@
 FROM nvcr.io/nvidia/pytorch:23.10-py3
 
 ENV DEBIAN_FRONTEND=noninteractive
-RUN apt-get update && apt-get install -y sudo wget unzip
+RUN apt-get update && apt-get install -y sudo wget unzip poppler-utils lsb-core software-properties-common
 
 RUN useradd --uid 1000 --shell /bin/bash appliedml42
 RUN usermod -aG sudo appliedml42
@@ -25,3 +25,6 @@ RUN make -j $(nproc)
 RUN sudo make install
 RUN sudo ldconfig -v
 WORKDIR /app
+
+# Install Pytorch Nightly Last so it can overwrite the version installed by the base image
+RUN pip3 install --pre torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/cu121
